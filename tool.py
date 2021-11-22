@@ -1,19 +1,12 @@
-from django.db import models
+class Descriptor:
+    def __init__(self,name=None,**args) -> None:
+        self.name = name
+        for key,value in args.items():
+            setattr(self,key,value)
+        
+    def __set__(self,instance,value):
+        isinstance.__dict__[self.name] = value 
 
-class Reporter(models.Model):
-    full_name = models.CharField(max_length=70)
-
-    def __str__(self):
-        return self.full_name
-
-class Article(models.Model):
-    pub_date = models.DateField()
-    headline = models.CharField(max_length=200)
-    content = models.TextField()
-    reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.headline
-
-
-print(Article)
+class Typed(Descriptor):
+    excepted_type = type(None)
+    
