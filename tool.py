@@ -10,3 +10,10 @@ class Descriptor:
 class Typed(Descriptor):
     excepted_type = type(None)
     
+    def __set__(self, instance, value):
+        if not isinstance(value,self.excepted_type):
+            raise TypeError(f'excepted {str(self.excepted_type)}')
+        super().__set__(instance, value)
+
+    
+    
