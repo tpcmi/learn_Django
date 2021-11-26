@@ -1,7 +1,6 @@
-source /Users/tpcmi/.bash_profile 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
+export PATH=/opt/miniconda3/bin:$PATH
+export PATH=/usr/local/Homebrew/bin:$PATH
+export HOMEBREW_NO_AUTO_UPDATE=true
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -17,35 +16,26 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# add for java
-JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
-PATH=$JAVA\_HOME/bin:$PATH:.
+# add for zsh_theam
+#enables colorin the terminal bash shell export
+export CLICOLOR=1
 
-CLASSPATH=$JAVA\_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+#setsup thecolor scheme for list export
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
-export JAVA_HOME
+#enables colorfor iTerm
+export TERM=xterm-256color
 
-export PATH
+# add for depot_tools
+export PATH="$PATH:/Users/tpcmi/depot_tools"
 
-export CLASSPATH
-export MAVEN_OPTS="$MAVEN_OPTS -Xmx4g"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/mongoDB/bin:$PATH"
+#add for mysql
+export PATH=${PATH}:/usr/local/mysql/bin
+alias mysqlstart='sudo /usr/local/mysql/support-files/mysql.server start'
+alias mysqlstop='sudo /usr/local/mysql/support-files/mysql.server stop'
 
-# Add for ll
-alias ll='ls -alF'
-
-# add for java
-export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
-export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home
-export JAVA_HOME=$JAVA_11_HOME
-
-
-alias jdk8='export JAVA_HOME=$JAVA_8_HOME'
-alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
-
-# add for mysql
-alias mysql=/usr/local/mysql/bin/mysql
-alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+#add for g++ and gcc
+export PATH=/usr/local/bin/:$PATH
 
