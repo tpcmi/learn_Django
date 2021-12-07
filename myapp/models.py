@@ -8,7 +8,7 @@
 from django.db import models
 
 class MyappUsers(models.Model):
-    name = models.CharField(max_length=32)
+    name = models.CharField(unique=True, max_length=32)
     age = models.PositiveIntegerField()
     phone = models.CharField(max_length=16, blank=True, null=True)
     addtime = models.DateTimeField()
