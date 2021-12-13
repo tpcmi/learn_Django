@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>User Table</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="script.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center;">List Of Users</h1>
+        <table style="border: solid 1px;width: 80vw;margin: auto;">
+            <tr style="border: solid 1px;">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Tel</th>
+                <th>Date</th>
+                <th>Execute</th>
+            </tr>
+            {% for u in userlist%}
+            <tr>
+                <td>{{ u.id }}</td>
+                <td>{{ u.name }}</td>
+                <td>{{ u.age }}</td>
+                <td>{{ u.phone }}</td>
+                <td>{{ u.addtime }}</td>
+                <td>Edit Delete</td>
+            </tr>
+            {% endfor%}
+        </table>
+    </body>
+</html>

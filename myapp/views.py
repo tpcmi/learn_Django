@@ -14,7 +14,12 @@ def index(request):
     return HttpResponse("First Page.")
     
 def show_users(request):
-    pass
+    # try:
+    ulist = MyappUsers.objects.all()
+    context = {'userlist':ulist}
+    return render(request,'myapp/index.html',context)
+    # except:
+    #     return HttpResponse('数据读取错误！')
 
 def add_users(request):
     pass
@@ -22,10 +27,13 @@ def add_users(request):
 def insert_users(request):
     pass
 
-def del_users(request):
+def del_users(request,uid=0):
     pass
 
-def edit_users(request):
+def edit_users(request,edit=0):
+    pass
+
+def update_users(request):
     pass
 
     
