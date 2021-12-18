@@ -1,21 +1,28 @@
-h1{
+h1,
+h3 {
     text-align: center;
 }
-table,tr,th,td{
-    border:1px solid #000
+
+table,
+tr,
+th,
+td {
+    border: 1px solid #000
 }
-table{
-    margin:0 auto;
-    width:80%;
+
+table {
+    margin: 0 auto;
+    width: 80%;
     text-align: center;
     border-collapse: collapse;
     padding: 0 0 8em 0;
 }
 
-a:hover{
-    color:blue;
+a:hover {
+    color: blue;
 }
-a{
+
+a {
     text-decoration: underline;
-    color:black;
+    color: black;
 }

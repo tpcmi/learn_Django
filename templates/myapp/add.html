@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>Add User</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="script.js" type="text/javascript"> -->
+    </script>
+</head>
+
+<body>
+    <h1>Add User Form</h1>
+    <h3> <a href="/myapp/show">浏览信息</a> | <a href="/myapp/add">添加信息</a> </h3>
+    <hr>
+    <div>
+        <h2>用户信息</h2>
+        <form action="" class="form">
+            <div>
+                <label for="name">姓名：</label><input type="text" id="name" placeholder="输入您的姓名" required>
+            </div>
+            <div>
+                <label for="age">年龄：</label><input type="text" id="age" placeholder="输入您的年龄" required>
+            </div>
+            <div>
+                <label for="tel">电话：</label><input type="text" id="tel" placeholder="输入您的电话" required>
+            </div>
+            <div>
+                <input type="submit" value="提交"><input id="clearForm" type="button" value="清空" onclick="clear();">
+            </div>
+        </form>
+    </div>
+</body>
+<style type="text/css">
+    a:hover {
+        color: blue;
+    }
+
+    a {
+        text-decoration: underline;
+        color: black;
+    }
+
+    h1,
+    h3 {
+        text-align: center;
+    }
+</style>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script>
+    
+    function clear(){
+        console.log('here');
+        $('#name').val('');
+        $('#age').val('');
+        $('#tel').val('');
+    };
+    document.getElementById("clearForm").onclick = clear;
+</script>
+</html>

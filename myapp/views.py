@@ -11,7 +11,7 @@ def index(request):
     ulist = mod.filter(age__gte=20)
     for u in ulist:
         print(u.id,u.name,u.age,u.phone)
-    return HttpResponse("First Page.")
+    return HttpResponse("<div style='text-align:center'><h1>First Page</h1><br/><a href='/myapp/show' style='text-decoration:none'>用户信息管理</a></div>")
     
 def show_users(request):
     # try:
@@ -22,7 +22,7 @@ def show_users(request):
     #     return HttpResponse('数据读取错误！')
 
 def add_users(request):
-    pass
+    return render(request,'myapp/add.html')
 
 def insert_users(request):
     pass
