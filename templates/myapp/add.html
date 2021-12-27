@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
+{% load static %}
 <head>
     <meta charset="utf-8">
     <title>Add User</title>
@@ -12,7 +12,6 @@
 <body>
     <h1>Add User Form</h1>
     <h3> <a href="/myapp/show">浏览信息</a> | <a href="/myapp/add">添加信息</a> </h3>
-    <hr>
     <div>
         <h2>用户信息</h2>
         <form action="" class="form">
@@ -32,6 +31,11 @@
     </div>
 </body>
 <style type="text/css">
+    body{
+        background-image: url("{% static 'myapp/beach.jpg' %}") ;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     a:hover {
         color: blue;
     }
