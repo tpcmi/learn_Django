@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 {% load static %}
+
 <head>
     <meta charset="utf-8">
     <title>Add User</title>
@@ -10,31 +11,85 @@
 </head>
 
 <body>
-    <h1>Add User Form</h1>
-    <h3> <a href="/myapp/show">浏览信息</a> | <a href="/myapp/add">添加信息</a> </h3>
-    <div>
-        <h2>用户信息</h2>
-        <form action="" class="form">
-            <div>
-                <label for="name">姓名：</label><input type="text" id="name" placeholder="输入您的姓名" required>
-            </div>
-            <div>
-                <label for="age">年龄：</label><input type="text" id="age" placeholder="输入您的年龄" required>
-            </div>
-            <div>
-                <label for="tel">电话：</label><input type="text" id="tel" placeholder="输入您的电话" required>
-            </div>
-            <div>
-                <input type="submit" value="提交"><input id="clearForm" type="button" value="清空" onclick="clear();">
-            </div>
-        </form>
+    <div class='main'>
+        <div class="title">
+            <h1>Add User Form</h1>
+            <h3> <a href="/myapp/show">浏览信息</a> | <a href="/myapp/add">添加信息</a> </h3>
+        </div>
+        <div class="infoForm">
+            <h2>用户信息</h2>
+            <form action="" class="form">
+                <div>
+                    <label for="name"><span>姓名：</span></label><input type="text" id="name" placeholder="输入您的姓名" required>
+                </div>
+                <div>
+                    <label for="age"><span>年龄：</span></label><input type="text" id="age" placeholder="输入您的年龄" required>
+                </div>
+                <div>
+                    <label for="tel"><span>电话：</span></label><input type="text" id="tel" placeholder="输入您的电话" required>
+                </div>
+                <div>
+                    <input type="submit" value="提交"><input id="clearForm" type="button" value="清空" onclick="clear();">
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 <style type="text/css">
-    body{
-        background-image: url("{% static 'myapp/beach.jpg' %}") ;
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .main {
+        width: 100%;
+        height: 100%;
+        background-image: url("{% static 'myapp/track.jpg' %}");
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    .title{
+        padding-top: 50px;
+        color: white;
+    }
+    .infoForm {
+        width: 40vw;
+        height: 50vh;
+        background: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 10px;
+        padding: 50px 0;
+        box-sizing: border-box;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
+    }
+    .infoForm>h2,label{
+        color: white;
+    }
+    .infoForm>h2{
+        font-size: 25px;
+    }
+    #name,#age,#tel{
+        width: 100%;
+        height: 30px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: white;
+    }
+    #name::-webkit-input-placeholder{
+        color: #BDCADA;
     }
     a:hover {
         color: blue;
@@ -42,21 +97,19 @@
 
     a {
         text-decoration: underline;
-        color: black;
+        color:white;
     }
 
     h1,
     h2,
     h3,
-    .form{
+    .form {
         text-align: center;
     }
-
 </style>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 <script>
-    
-    function clear(){
+    function clear() {
         console.log('here');
         $('#name').val('');
         $('#age').val('');
@@ -64,4 +117,5 @@
     };
     document.getElementById("clearForm").onclick = clear;
 </script>
+
 </html>
